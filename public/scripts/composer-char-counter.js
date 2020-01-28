@@ -1,11 +1,13 @@
-function textCount(textArea) {
-  let n = 140 - textArea.value.length;
-  $('#counter').text(n);
-  if (n < 0) $('#counter').css("color", "red");
-  else $('#counter').css("color", "black");
-};
+$(document).ready(function() {
 
-function textAreaAdjust(textArea) {
-  textArea.style.height = "0px";
-  textArea.style.height = (3 + textArea.scrollHeight)+"px";
-};
+  $("#tweetTextArea").on('keyup', function() {
+    this.style.height = 31 + "px";
+    this.style.height = this.scrollHeight + "px";
+    
+    let n = 140 - this.value.length;
+    $('#counter').text(n);
+    if (n < 0) $('#counter').css("color", "red");
+    else $('#counter').css("color", "black");
+  });
+
+});

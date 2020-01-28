@@ -4,9 +4,9 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-// $(document).ready(function() {
-//   --- to be implemented ---
-// });
+$(document).ready(function() {
+
+});
 
 function createTweetElements(tweet) {
   const markup = `

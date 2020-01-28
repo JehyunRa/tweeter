@@ -4,6 +4,7 @@ article {
   border-style: solid;
   border-width: 4px;
   border-color: rgb(192, 220, 252);
+  word-wrap: break-word;
 }
 
 article:hover {
@@ -13,16 +14,6 @@ article:hover {
 article:hover .hoverText {
   color: #545149;
 }
-
-/* .wrapper {
-  height: 100px;
-  width: 100px;
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: 20px 20px 20px;
-  grid-template-rows: 20px 20px 20px;
-  background-color: blue;
-} */
 
 .wrapper {
   display: grid;
