@@ -6,24 +6,61 @@
 
     <!-- External CSS -->
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Bungee|Source+Sans+Pro:300,300i,700,700i&display=swap" rel="stylesheet">
 
     <!-- App CSS -->
+    <link rel="stylesheet" href="/styles/helper.css" type="text/css" />
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweets.css" type="text/css" />
 
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
+    <script type="text/javascript" src="/scripts/tweets.js"></script>
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </head>
 
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
-      <span>tweeter</span>
+      <span class="floatLeft fontBungee font36">tweeter</span>
+        <p class="floatRight"><span class="boldText">write</span> a new tweet</p>
+      <div class="clear"></div>
     </nav>
 
+    <header>
+        <div>
+            <img class="center" src="/images/profile-hex.png"> 
+        </div>
+        <div>
+            <h2 class="center textCenter marginTop10">Your Name</h2>
+        </div>
+    </header>
+
     <!-- Page-specific (main) content here -->
-    <main class="container"></main>
+    <main class="center width90">
+      <div class="center width96">
+        <section class="new-tweet">
+          <h2 class="textCenter">Compose Tweet</h2>
+          <br>
+          <form action="/tweets" method="POST">
+            <textarea onkeyup="textAreaAdjust(this);textCount(this);"
+                      id="tweetTextArea"
+                      style="overflow:hidden"
+                      name="text"
+                      placeholder="What are you humming about?"
+                      class="textarea"></textarea>
+            <hr/>
+            <input class="floatLeft tweetButton fontBungee" type="submit" value="Tweet">
+            <span class="floatRight boldText"><div class="boldText" id="counter">140</div></span>
+            <div class="clear"></div>
+          </form>
+        </section>
+      </div>
+    </main>
   </body>
 </html>

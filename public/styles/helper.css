@@ -1,0 +1,49 @@
+.boldText {
+  font-weight: bold;
+}
+
+.floatLeft {
+  float: left;
+}
+
+.floatRight {
+  float: right;
+}
+
+.clear {
+  clear: both;
+}
+
+.font24 {
+  font-size: 24px;
+}
+
+.font36 {
+  font-size: 36px;
+}
+
+.fontBungee {
+  font-family: "Bungee";
+}
+
+.marginTop10 {
+  margin-top: 10px;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.textCenter {
+  text-align: center;
+}
+
+.width96 {
+  width: 96%;
+}
+
+.width90 {
+  width: 90%;
+}

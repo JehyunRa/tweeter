@@ -6,8 +6,13 @@
 html {
   box-sizing: border-box;
 }
+
 *, *:before, *:after {
   box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  list-style: none;
 }
 
 /*
@@ -15,11 +20,20 @@ html {
  */
 
 body {
+  height: 1000px;
+  background-color: #f4ecf2;
+  /* font */
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  font-style: italic;
   color: #545149;
-  background-color: #f4f1ec;
-  font-size: 24px;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+ main {
+  height: 1000px;
+ }

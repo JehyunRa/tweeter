@@ -1,0 +1,24 @@
+hr {
+  margin: 0.2em 0.2em;
+  border: 0;
+  border-bottom: 2px solid rgb(12, 4, 67);
+  display: block;
+}
+
+textArea {
+  border: none;
+  outline: none;
+  resize: none;
+  height: 30px;
+  width: 100%;
+  background: none;
+  overflow:hidden;
+}
+
+.tweetButton {
+  border: none;
+  height: 40px;
+  width: 100px;
+  background-color: rgb(12, 4, 67);
+  color: #FFFFFF;
+}
