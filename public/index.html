@@ -43,11 +43,15 @@
 
     <!-- Page-specific (main) content here -->
     <main class="center width90">
-      <div class="center width96">
-        <section class="new-tweet">
+
+
+        <!-- New tweets are typed in here -->
+        <section class="new-tweet" id="new-tweet">
           <h2 class="textCenter">Compose Tweet</h2>
           <br>
-          <form onsubmit="postTweet(this)" action="/tweets" method="POST">
+          <form onsubmit="postTweet(this)"
+                action="/tweets"
+                method="POST">
             <textarea onkeyup="textAreaAdjust(this);textCount(this);"
                       id="tweetTextArea"
                       style="overflow:hidden"
@@ -55,12 +59,19 @@
                       placeholder="What are you humming about?"
                       class="textarea"></textarea>
             <hr/>
-            <input class="floatLeft tweetButton fontBungee" type="submit" value="Tweet">
-            <span class="floatRight boldText"><div class="boldText" id="counter">140</div></span>
+            <input class="floatLeft tweetButton fontBungee"
+                   type="submit"
+                   value="Tweet">
+            <span class="floatRight boldText" id="counter">140</span>
             <div class="clear"></div>
           </form>
         </section>
-      </div>
+
+        <!-- Tweets in database can be seen in here -->
+        <section id="display-tweets">
+
+        </section>
+
     </main>
   </body>
 </html>
