@@ -21,7 +21,6 @@
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
-    <script type="text/javascript" src="/scripts/post-tweets.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </head>
 
@@ -49,7 +48,7 @@
         <section class="new-tweet" id="new-tweet">
           <h2 class="textCenter">Compose Tweet</h2>
           <br>
-          <form onsubmit="formValidation()"
+          <form onsubmit="formValidation(this)"
                 action="/tweets"
                 method="POST">
             <textarea onkeyup="textAreaAdjust(this);textCount(this);"
