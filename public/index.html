@@ -14,13 +14,14 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweets.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweetContainer.css" type="text/css" />
 
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
-    <script type="text/javascript" src="/scripts/tweets.js"></script>
+    <script type="text/javascript" src="/scripts/post-tweets.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </head>
 
@@ -44,12 +45,11 @@
     <!-- Page-specific (main) content here -->
     <main class="center width90">
 
-
         <!-- New tweets are typed in here -->
         <section class="new-tweet" id="new-tweet">
           <h2 class="textCenter">Compose Tweet</h2>
           <br>
-          <form onsubmit="postTweet(this)"
+          <form onsubmit="formValidation()"
                 action="/tweets"
                 method="POST">
             <textarea onkeyup="textAreaAdjust(this);textCount(this);"
@@ -68,9 +68,7 @@
         </section>
 
         <!-- Tweets in database can be seen in here -->
-        <section id="display-tweets">
-
-        </section>
+        <section id="display-tweets"></section>
 
     </main>
   </body>

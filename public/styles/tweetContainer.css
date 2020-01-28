@@ -1,0 +1,15 @@
+article {
+  margin: 10px;
+  width: 100%;
+  border-style: solid;
+  border-width: 4px;
+  border-color: rgb(192, 220, 252);
+}
+
+article:hover {
+  border-color: #4056A1;
+}
+
+article:hover .hoverText {
+  color: #545149;
+}

@@ -26,7 +26,7 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 20px;
   font-weight: 700;
-  font-style: italic;
+  font-style: normal;
   color: #545149;
 }
 
@@ -34,6 +34,22 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
- main {
-  height: 1000px;
- }
+main {
+height: 1000px;
+}
+
+/*
+ * Others
+ */
+
+hr {
+  margin: 0.2em 0.2em;
+  border-bottom: 2px solid rgb(12, 4, 67);
+  display: block;
+}
+
+hr2 {
+  margin: 0.2em 0.2em;
+  border-top: 1px solid rgb(192, 220, 252);
+  display: block;
+}

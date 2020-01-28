@@ -26,6 +26,10 @@
   font-family: "Bungee";
 }
 
+.hoverText {
+  color: #fafbfe;
+}
+
 .marginTop10 {
   margin-top: 10px;
 }

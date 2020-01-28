@@ -4,25 +4,40 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-function textAreaAdjust(textArea) {
-  textArea.style.height = "0px";
-  textArea.style.height = (3 + textArea.scrollHeight)+"px";
-}
+// $(document).ready(function() {
+//   --- to be implemented ---
+// });
 
-function displayTweets(tweets) {
-  for (const tweet of tweets) {
-    console.log(tweet.user.name);
-    $("#display-tweets").append(`<p>${tweet.user.name}</p>`);
-  }
-}
+function createTweetElements(tweet) {
+  const markup = `
+      <article class="center">
+        <div>
+          <p class="floatLeft">${tweet.user.name}</p>
+          <p class="floatRight hoverText">${tweet.user.handle}</p>
+          <div class="clear"></div>
+        </div>
+        <div>
+          <div>${tweet.content.text}</div>
+        </div>
+        <hr2/>
+        <div>
+          <span class="floatLeft">${tweet.created_at}</span>
+          <p class="floatRight">features</p>
+          <div class="clear"></div>
+        </div>
+      </article>
+    `;
+  return markup;
+};
 
-function loadTweets() {
-  console.log('performing ajax call...');
+function renderTweets() {
   $.ajax('/tweets', { method: 'GET' })
-  .then(function (result) {
-    console.log('Success: ', result);
-    displayTweets(result);
-  });
-}
+  .then(function (tweets) {
+    for (const tweet of tweets) {
+      let markup = createTweetElements(tweet);
+      $("#display-tweets").append(markup);
+    }
+  })
+};
 
-loadTweets();
+renderTweets();
