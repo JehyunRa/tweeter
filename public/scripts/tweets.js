@@ -1,5 +1,6 @@
-// let db = require("../../server/lib/in-memory-db.js")
-
-// function postTweets() {
-//   console.log (db);
-// }
+function postTweet(form) {
+  event.preventDefault();
+  let a = "empty";
+  a = $(form).serialize();
+  console.log(a);
+}

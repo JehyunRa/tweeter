@@ -47,7 +47,7 @@
         <section class="new-tweet">
           <h2 class="textCenter">Compose Tweet</h2>
           <br>
-          <form action="/tweets" method="POST">
+          <form onsubmit="postTweet(this)" action="/tweets" method="POST">
             <textarea onkeyup="textAreaAdjust(this);textCount(this);"
                       id="tweetTextArea"
                       style="overflow:hidden"
