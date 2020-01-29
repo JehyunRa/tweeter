@@ -35,7 +35,9 @@ body {
  */
 
 main {
-height: 1000px;
+  position: relative;
+  top: 0px;
+  height: 1000px;
 }
 
 /*

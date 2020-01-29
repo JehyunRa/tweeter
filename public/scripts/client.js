@@ -9,10 +9,10 @@ $(document).ready(function() {
   function createTweetElements(tweet) {
     const markup = `
         <article class="center">
-          <div class="wrapper">
-            <div class="a"><img src=${tweet.user.avatars}></img></div>
-            <div class="b"><p>${tweet.user.name}</p></div>
-            <div class="c"><p class="floatRight hoverText">${tweet.user.handle}</p></div>
+          <div class="wrapperNewTweet">
+            <div class="d"><img src=${tweet.user.avatars}></img></div>
+            <div class="e"><p>${tweet.user.name}</p></div>
+            <div class="f"><p class="floatRight hoverText">${tweet.user.handle}</p></div>
           </div>
           <div>
             <div>${tweet.content.text}</div>

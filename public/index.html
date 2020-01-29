@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/new-tweets.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
     <link rel="stylesheet" href="/styles/tweetContainer.css" type="text/css" />
 
     <!-- External JS -->
@@ -22,15 +22,15 @@
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+    <script type="text/javascript" src="/scripts/collapsible.js"></script>
   </head>
 
   <body>
     <!-- Top nav bar (fixed) -->
-    <nav>
-      <span class="floatLeft fontBungee font36">tweeter</span>
-        <p class="floatRight"><span class="boldText">write</span> a new tweet</p>
-      <div class="clear"></div>
-      <i class="arrow down floatRight"></i>
+    <nav class="wrapperNav">
+      <div class="a"><span class="floatLeft fontBungee font36">tweeter</span></div>
+      <div class="b"><p class="d floatRight"><span class="boldText">write</span> a new tweet</p></div>
+      <div class="c"><i id="write" class="arrow center"></i></div>
     </nav>
 
     <header>

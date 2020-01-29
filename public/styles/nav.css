@@ -1,22 +1,62 @@
 nav {
   position: fixed;
-  padding: 1.5em;
   height: 80px;
   width: 100%;
   z-index: 10;
   background-color: #4056A1;
   /* font */
   color: #FFFFFF;
+  text-shadow: 2px 2px black;
 }
 
-i {
-  border: solid black;
+#write {
+  position: relative;
+  height: 10px;
+  width: 10px;
+  border: solid red;
   border-width: 0 3px 3px 0;
-  display: inline-block;
   padding: 3px;
-}
-
-.down {
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
+}
+
+.b:hover {
+  color: gold;
+}
+
+.b:active {
+  position: relative;
+  left: 2px;
+  top: 2px;
+  text-shadow: none;
+}
+
+.b:hover ~ .c i {
+  animation: move 0.8s infinite;
+}
+
+@keyframes move {
+  from {top: 0px;}
+  70% {top: 8.6px;}
+  80% {top: 9.4px;}
+  90% {top: 9.8px;}
+  to {top: 10px;}
+}
+
+.wrapperNav {
+  display: grid;
+  grid-template-columns: 40px 175px 1fr 150px 40px;
+  grid-template-rows: 30px 5px 20px 15px 10px;
+}
+
+.a {
+  grid-area: 2/2/5/3;
+}
+
+.b {
+  grid-area: 2/3/4/5;
+}
+
+.c {
+  grid-area: 4/4/6/5;
 }

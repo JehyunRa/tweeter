@@ -15,20 +15,20 @@ article:hover .hoverText {
   color: #545149;
 }
 
-.wrapper {
+.wrapperNewTweet {
   display: grid;
   grid-template-columns: 70px 1fr 1fr;
-  grid-template-rows: 23px 23px 23px;
+  grid-template-rows: repeat(3, 23px);
 }
 
-.a {
+.d {
   grid-area: 1/1/4/2;
 }
 
-.b {
+.e {
   grid-area: 2/2/2/3;
 }
 
-.c {
+.f {
   grid-area: 2/3/2/4;
 }
