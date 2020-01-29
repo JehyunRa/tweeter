@@ -1,4 +1,4 @@
-/* tweet container === article */
+/* Tweet Container === article */
 
 article {
   margin: 10px;
@@ -15,7 +15,7 @@ article {
   grid-template-rows: repeat(3, 23px);
 }
 
-/* tweet container behavior */
+/* Tweet Container behavior */
 
 article:hover {
   border-color: #4056A1;
@@ -25,7 +25,7 @@ article:hover .hoverText {
   color: #545149;
 }
 
-/* tweet container contents */
+/* Tweet Container contents */
 
 .tweetA {
   grid-area: 1/1/4/2;

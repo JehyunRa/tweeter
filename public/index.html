@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
+  <!-- HEAD -->
+
   <head>
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
@@ -28,8 +31,11 @@
     <script type="text/javascript" src="/scripts/collapsible.js"></script>
   </head>
 
+  <!-- BODY -->
+
   <body class="bodyWrapper">
-    <!-- Top nav bar (fixed) -->
+
+    <!-- Nav -->
     <nav class="navWrapper">
       <div class="navA"><span class="floatLeft fontBungee font36">tweeter</span></div>
       <div class="navB"><p class="d floatRight"><span class="boldText">write</span> a new tweet</p></div>
@@ -45,10 +51,10 @@
         </div>
     </header>
 
-    <!-- Page-specific (main) content here -->
+    <!-- Main -->
     <main class="main">
 
-        <!-- New tweets are typed in here -->
+        <!-- new-tweet -->
         <section class="new-tweet">
           <h2 class="textCenter">Compose Tweet</h2>
           <div class="warning textCenter">Tweeter does not support tweets longer than 140 letters or empty inputs</div>
@@ -57,7 +63,6 @@
                 action="/tweets"
                 method="POST">
             <textarea id="tweetTextArea"
-                      style="overflow:hidden"
                       name="text"
                       placeholder="What are you humming about?"
                       class="textarea"></textarea>
@@ -72,7 +77,7 @@
           </form>
         </section>
 
-        <!-- Tweets in database can be seen in here -->
+        <!-- display-tweet -->
         <section id="display-tweets"></section>
 
     </main>

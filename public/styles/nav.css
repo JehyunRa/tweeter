@@ -1,4 +1,4 @@
-/* nav */
+/* Nav */
 
 nav {
   position: fixed;
@@ -17,7 +17,7 @@ nav {
   grid-template-rows: 30px 5px 20px 15px 10px;
 }
 
-/* nav inner contents */
+/* Nav inner contents */
 
 .navA {
   grid-area: 2/2/5/3;
@@ -42,7 +42,7 @@ nav {
   -webkit-transform: rotate(45deg);
 }
 
-/* nav inner contents behavior */
+/* Nav inner contents behavior */
 
 .navB:hover {
   color: gold;
