@@ -20,19 +20,19 @@ nav {
   -webkit-transform: rotate(45deg);
 }
 
-.b:hover {
+.navB:hover {
   color: gold;
   transition-duration: 1s;
 }
 
-.b:active {
+.navB:active {
   position: relative;
   left: 2px;
   top: 2px;
   text-shadow: none;
 }
 
-.b:hover ~ .c i {
+.navB:hover ~ .c i {
   animation: move 0.8s infinite;
 }
 
@@ -44,20 +44,20 @@ nav {
   to {top: 10px;}
 }
 
-.wrapperNav {
+.navWrapper {
   display: grid;
   grid-template-columns: 40px 175px 1fr 150px 40px;
   grid-template-rows: 30px 5px 20px 15px 10px;
 }
 
-.a {
+.navA {
   grid-area: 2/2/5/3;
 }
 
-.b {
+.navB {
   grid-area: 2/3/4/5;
 }
 
-.c {
+.navC {
   grid-area: 4/4/6/5;
 }
