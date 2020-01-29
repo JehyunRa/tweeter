@@ -4,6 +4,9 @@
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
 
+    <!-- Disabling Viewport Zooming -->
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'/>
+
     <!-- External CSS -->
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Bungee|Source+Sans+Pro:300,300i,700,700i&display=swap" rel="stylesheet">
@@ -30,7 +33,7 @@
     <nav class="navWrapper">
       <div class="navA"><span class="floatLeft fontBungee font36">tweeter</span></div>
       <div class="navB"><p class="d floatRight"><span class="boldText">write</span> a new tweet</p></div>
-      <div class="navC"><i id="write" class="arrow center"></i></div>
+      <div class="navC"><i id="arrow" class="arrow center"></i></div>
     </nav>
 
     <header>
@@ -46,8 +49,7 @@
     <main class="main">
 
         <!-- New tweets are typed in here -->
-        <section id="new-tweet" 
-                class="new-tweet">
+        <section class="new-tweet">
           <h2 class="textCenter">Compose Tweet</h2>
           <div class="warning textCenter">Tweeter does not support tweets longer than 140 letters or empty inputs</div>
           <form id="tweetTextForm"

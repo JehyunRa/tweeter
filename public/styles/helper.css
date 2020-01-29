@@ -1,4 +1,15 @@
 /* position modifiers */
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.clear {
+  clear: both;
+}
+
 .floatLeft {
   float: left;
 }
@@ -7,18 +18,19 @@
   float: right;
 }
 
-.clear {
-  clear: both;
+.marginTop10 {
+  margin-top: 10px;
+}
+
+.textCenter {
+  text-align: center;
 }
 
 /* text modifiers */
+
 .boldText {
   font-weight: bold;
 }
-
-
-
-
 
 .font24 {
   font-size: 24px;
@@ -34,18 +46,4 @@
 
 .hoverText {
   color: #fafbfe;
-}
-
-.marginTop10 {
-  margin-top: 10px;
-}
-
-.center {
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-}
-
-.textCenter {
-  text-align: center;
 }

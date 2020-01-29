@@ -1,8 +1,5 @@
-/*
- * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
- * https://css-tricks.com/international-box-sizing-awareness-day/
- * Do not modify these two selectors, please
- */
+/* Global layout stuff */
+
 html {
   box-sizing: border-box;
 }
@@ -11,18 +8,15 @@ html {
   box-sizing: inherit;
   margin: 0;
   padding: 0;
-  font-weight: normal;
   list-style: none;
+  font-weight: normal;
 }
 
-/*
- * Global layout stuff
- */
+/* body */
 
 body {
   height: 1000px;
   background-color: rgb(255, 255, 255);
-  /* font */
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 20px;
   font-weight: 700;
@@ -36,9 +30,7 @@ body {
   grid-template-rows: 80px 300px 1fr;
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+/* Main */
 
 @media only screen and (max-width: 1024px) {
   main {
@@ -51,6 +43,8 @@ body {
     grid-area: 2/3/4/4;
   }
 }
+
+/* Misc. */
 
 hr {
   margin: 0.2em 0.2em;

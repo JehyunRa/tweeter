@@ -1,3 +1,5 @@
+/* tweet container === article */
+
 article {
   margin: 10px;
   width: 100%;
@@ -7,6 +9,14 @@ article {
   word-wrap: break-word;
 }
 
+.wrapperNewTweet {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  grid-template-rows: repeat(3, 23px);
+}
+
+/* tweet container behavior */
+
 article:hover {
   border-color: #4056A1;
 }
@@ -15,20 +25,12 @@ article:hover .hoverText {
   color: #545149;
 }
 
-.wrapperNewTweet {
-  display: grid;
-  grid-template-columns: 70px 1fr 1fr;
-  grid-template-rows: repeat(3, 23px);
-}
+/* tweet container contents */
 
-.d {
+.tweetA {
   grid-area: 1/1/4/2;
 }
 
-.e {
+.tweetB {
   grid-area: 2/2/2/3;
-}
-
-.f {
-  grid-area: 2/3/2/4;
 }

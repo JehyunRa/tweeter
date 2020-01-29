@@ -55,9 +55,10 @@ $(document).ready(function() {
     const markup = `
         <article class="center">
           <div class="wrapperNewTweet">
-            <div class="d"><img src=${tweet.user.avatars}></img></div>
-            <div class="e"><p>${tweet.user.name}</p></div>
-            <div class="f"><p class="floatRight hoverText">${tweet.user.handle}</p></div>
+            <div class="tweetA"><img src=${tweet.user.avatars}></img></div>
+            <div class="tweetB"><p>${tweet.user.name}</p></div>
+            <div class="tweetB"><p class="floatRight hoverText">${tweet.user.handle}</p></div>
+            <div class="clear"></div>
           </div>
           <div>
             <div>${tweet.content.text}</div>

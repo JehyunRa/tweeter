@@ -1,3 +1,5 @@
+/* nav */
+
 nav {
   position: fixed;
   height: 80px;
@@ -9,7 +11,27 @@ nav {
   text-shadow: 2px 2px black;
 }
 
-#write {
+.navWrapper {
+  display: grid;
+  grid-template-columns: 40px 175px 1fr 150px 40px;
+  grid-template-rows: 30px 5px 20px 15px 10px;
+}
+
+/* nav inner contents */
+
+.navA {
+  grid-area: 2/2/5/3;
+}
+
+.navB {
+  grid-area: 2/3/4/5;
+}
+
+.navC {
+  grid-area: 4/4/6/5;
+}
+
+#arrow {
   position: relative;
   height: 10px;
   width: 10px;
@@ -19,6 +41,8 @@ nav {
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
 }
+
+/* nav inner contents behavior */
 
 .navB:hover {
   color: gold;
@@ -32,7 +56,7 @@ nav {
   text-shadow: none;
 }
 
-.navB:hover ~ .c i {
+.navB:hover ~ .navC i {
   animation: move 0.8s infinite;
 }
 
@@ -42,22 +66,4 @@ nav {
   80% {top: 9.4px;}
   90% {top: 9.8px;}
   to {top: 10px;}
-}
-
-.navWrapper {
-  display: grid;
-  grid-template-columns: 40px 175px 1fr 150px 40px;
-  grid-template-rows: 30px 5px 20px 15px 10px;
-}
-
-.navA {
-  grid-area: 2/2/5/3;
-}
-
-.navB {
-  grid-area: 2/3/4/5;
-}
-
-.navC {
-  grid-area: 4/4/6/5;
 }
