@@ -1,16 +1,3 @@
-.new-tweet-collapse {
-  background-color: red;
-  animation: new-tweet-collapse;
-}
-
-@keyframes new-tweet-collapse {
-  from {top: 0px;}
-  70% {top: 43px;}
-  80% {top: 47px;}
-  90% {top: 49px;}
-  to {top: 50px;}
-}
-
 textArea {
   border: none;
   outline: none;
