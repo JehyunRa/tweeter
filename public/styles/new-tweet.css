@@ -15,3 +15,14 @@ textArea {
   background-color: rgb(12, 4, 67);
   color: #FFFFFF;
 }
+
+.warning {
+  border: solid 2px red;
+  height: 30px;
+  width: 100%;
+  display: none;
+}
+
+.warningShow {
+  display: block;
+}

@@ -59,9 +59,12 @@ $(document).ready(function() {
 
   $("#tweetTextForm").on('submit', function(e) {
     e.preventDefault();
+    $('#tweetTextArea').css("height", 31 + "px");
     let text = document.getElementById("tweetTextArea").value;
-    if (text === "" || text.length >= 140) alert('unacceptable tweet input');
-    else {
+    if (text === "" || text.length >= 140) {
+      $('.warning').addClass('warningShow');
+    } else {
+      $('.warning').removeClass('warningShow');
       document.getElementById("tweetTextArea").value = `<p>${escape(text)}</p>`;
       postTweet(this);
     }

@@ -49,9 +49,9 @@
         <section id="new-tweet" 
                  class="new-tweet">
           <h2 class="textCenter">Compose Tweet</h2>
-          <br>
-
+          <div class="warning textCenter">Tweeter does not support tweets longer than 140 letters or empty inputs</div>
           <form id="tweetTextForm"
+                class="marginTop10"
                 action="/tweets"
                 method="POST">
             <textarea id="tweetTextArea"
