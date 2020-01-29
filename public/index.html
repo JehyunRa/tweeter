@@ -48,7 +48,8 @@
         <section class="new-tweet" id="new-tweet">
           <h2 class="textCenter">Compose Tweet</h2>
           <br>
-          <form onsubmit="formValidation(this)"
+
+          <form id="tweetTextForm"
                 action="/tweets"
                 method="POST">
             <textarea id="tweetTextArea"
@@ -58,6 +59,7 @@
                       class="textarea"></textarea>
             <hr/>
             <input class="floatLeft tweetButton fontBungee"
+                   id="tweetTextButton"
                    type="submit"
                    value="Tweet">
             <span class="floatRight boldText" id="counter">140</span>
