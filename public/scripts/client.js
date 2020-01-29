@@ -29,10 +29,8 @@ $(document).ready(function() {
   };
   
   function renderTweets() {
-    console.log('render start');
     $.ajax('/tweets', { method: 'GET' })
     .then(function (tweets) {
-      console.log('received data:\n'+tweets)
       for (const tweet of tweets) {
         let markup = createTweetElements(tweet);
         $("#display-tweets").append(markup);
@@ -42,6 +40,7 @@ $(document).ready(function() {
 
   function postTweet(form) {
     let data = $(form).serialize();
+    document.getElementById("tweetTextArea").value = ""
     $.ajax({
       url: '/tweets',
       data,
@@ -52,11 +51,20 @@ $(document).ready(function() {
     })
   };
 
+  const escape =  function(str) {
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
+
   $("#tweetTextForm").on('submit', function(e) {
     e.preventDefault();
-    let check = (document.getElementById("tweetTextArea")).value;
-    if (check === "" || check.length >= 140) alert('unacceptable tweet input');
-    else postTweet(this);
+    let text = document.getElementById("tweetTextArea").value;
+    if (text === "" || text.length >= 140) alert('unacceptable tweet input');
+    else {
+      document.getElementById("tweetTextArea").value = `<p>${escape(text)}</p>`;
+      postTweet(this);
+    }
   });
 
   renderTweets();  

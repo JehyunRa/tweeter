@@ -17,18 +17,18 @@ article:hover .hoverText {
 
 .wrapper {
   display: grid;
-  grid-template-columns: repeat(29, 1fr);
-  grid-template-rows: repeat(3, 23px);
+  grid-template-columns: 70px 1fr 1fr;
+  grid-template-rows: 23px 23px 23px;
 }
 
 .a {
-  grid-area: 1/1/4/4;
+  grid-area: 1/1/4/2;
 }
 
 .b {
-  grid-area: 2/5/2/17;
+  grid-area: 2/2/2/3;
 }
 
 .c {
-  grid-area: 2/17/2/30;
+  grid-area: 2/3/2/4;
 }

@@ -3,5 +3,17 @@ header {
   height: 400px;
   width: 100%;
   background-image: url("/images/checkered-pattern.png");
-  background-color: rgb(192, 220, 252);
+  background-color: rgb(166, 232, 242);
+}
+
+i {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
 }
