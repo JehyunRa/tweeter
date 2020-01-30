@@ -14,7 +14,7 @@ nav {
 
 .navWrapper {
   display: grid;
-  grid-template-columns: 40px 175px 1fr 150px 40px;
+  grid-template-columns: 5% 175px 1fr 150px 5%;
   grid-template-rows: 30px 5px 20px 15px 10px;
 }
 
