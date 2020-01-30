@@ -49,6 +49,8 @@ $(document).ready(function() {
       minute += 1;
     }
 
+    hour >= 6 ? hour -= 5: hour += 19;
+    minute <= 46 ? minute += 13: minute -= 47;
     return `${year}/${month}/${Math.floor(days) + 1} ${pad2(hour)}:${pad2(minute)}`;
   }
 
@@ -112,8 +114,8 @@ $(document).ready(function() {
   $("#tweetTextForm").on('submit', function(e) {
     e.preventDefault();
     $('#tweetTextArea').css("height", 31 + "px"); // reset textbox size
-    let text = document.getElementById("tweetTextArea").value;
     
+    let text = document.getElementById("tweetTextArea").value;
     // check content validation
     if (text === "" || text.length >= 140) {
       $('.warning').addClass('warningShow');
