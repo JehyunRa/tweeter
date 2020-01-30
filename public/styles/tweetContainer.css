@@ -6,6 +6,7 @@ article {
   border-style: solid;
   border-width: 4px;
   border-color: rgb(192, 220, 252);
+  overflow-wrap: break-word;
 }
 
 .wrapperNewTweet {
