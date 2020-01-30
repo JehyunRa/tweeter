@@ -20,7 +20,7 @@ textArea {
 
 .warning {
   border: solid 2px red;
-  height: 30px;
+  min-height: 30px;
   width: 100%;
   display: none;
 }

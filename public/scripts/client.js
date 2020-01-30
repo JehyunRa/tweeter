@@ -8,7 +8,7 @@ $(document).ready(function() {
 
   // calculate length of time between when post was made and now
   function numberToDate(num) {
-    return moment(num + 900000).startOf('minute').fromNow();
+    return moment(num + 1020000).startOf('minute').fromNow();
   }
 
   // create tweet container for each tweet
