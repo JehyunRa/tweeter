@@ -6,52 +6,9 @@
 
 $(document).ready(function() {
 
-  // calculate date for given data
-  function pad2(number) {
-    return (number < 10 ? '0' : '') + number
-  }
-
+  // calculate length of time between when post was made and now
   function numberToDate(num) {
-    let seconds = num / 1000;
-    let days = seconds / (60 * 60 * 24);
-    seconds -= Math.floor(days) * (60 * 60 * 24);
-    
-    let year = 1970;
-    let month = 1;
-    let daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-    let hour = 0;
-    let minute = 0;
-    
-    while (days > 365) {
-      if (year % 4 !== 0) {
-        days -= 365;
-        year += 1;
-      } else {
-        days -= 366;
-        year += 1;
-      }
-    }
-    
-    for(let i = 0; i < 12; i++) {
-      if (days >= daysInMonth[i]) {
-        days -= daysInMonth[i];
-        month += 1;
-      } else break;
-    }
-    
-    while (seconds > 60 * 60) {
-      seconds -= 60 * 60;
-      hour += 1;
-    }
-
-    while (seconds > 60) {
-      seconds -= 60;
-      minute += 1;
-    }
-
-    hour >= 6 ? hour -= 5: hour += 19;
-    minute <= 46 ? minute += 13: minute -= 47;
-    return `${year}/${month}/${Math.floor(days) + 1} ${pad2(hour)}:${pad2(minute)}`;
+    return moment(num + 900000).startOf('minute').fromNow();
   }
 
   // create tweet container for each tweet
