@@ -7,11 +7,12 @@
 $(document).ready(function() {
 
   // calculate length of time between when post was made and now
-  function numberToDate(num) {
-    return moment(num + 1020000).startOf('minute').fromNow();
-  }
+  // function numberToDate(num) {
+  //   return moment(num).fromNow();
+  // }
 
   // create tweet container for each tweet
+  //(for unknown reason moment.js is calculating time 10 min ago as default so I've added 600000 milliseconds)
   function createTweetElements(tweet) {
     const markup = `
         <article class="center">
@@ -27,7 +28,7 @@ $(document).ready(function() {
           </div>
           <hr2/>
           <div class="flexParent flexSB">
-            <p>${numberToDate(tweet.created_at)}</p>
+            <p>${moment(tweet.created_at + 600000).fromNow()}</p>
             <p>🏳️🔃💟</p>
           </div>
         </article>
