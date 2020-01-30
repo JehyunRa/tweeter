@@ -60,18 +60,18 @@ $(document).ready(function() {
         <article class="center">
           <div class="wrapperNewTweet">
             <div class="tweetA"><img src=${tweet.user.avatars}></img></div>
-            <div class="tweetB"><p>${tweet.user.name}</p></div>
-            <div class="tweetB"><p class="floatRight hoverText">${tweet.user.handle}</p></div>
-            <div class="clear"></div>
+            <div class="tweetB flexParent flexSB">
+              <p>${tweet.user.name}</p>
+              <p class="hoverText">${tweet.user.handle}</p>
+            </div>
           </div>
           <div>
             <div>${tweet.content.text}</div>
           </div>
           <hr2/>
-          <div>
-            <span class="floatLeft">${numberToDate(tweet.created_at)}</span>
-            <p class="floatRight">features</p>
-            <div class="clear"></div>
+          <div class="flexParent flexSB">
+            <p>${numberToDate(tweet.created_at)}</p>
+            <p>💟🔁😀</p>
           </div>
         </article>
       `;
@@ -113,10 +113,13 @@ $(document).ready(function() {
   // when new-tweet form is submitted intercept it
   $("#tweetTextForm").on('submit', function(e) {
     e.preventDefault();
-    $('#tweetTextArea').css("height", 31 + "px"); // reset textbox size
+
+    // reset textbox size
+    $('#counter').text(140);
+    $('#tweetTextArea').css("height", 31 + "px");
     
-    let text = document.getElementById("tweetTextArea").value;
     // check content validation
+    let text = document.getElementById("tweetTextArea").value;
     if (text === "" || text.length >= 140) {
       $('.warning').addClass('warningShow');
     } else {

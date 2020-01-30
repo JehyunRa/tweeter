@@ -11,7 +11,7 @@ article {
 
 .wrapperNewTweet {
   display: grid;
-  grid-template-columns: 70px 1fr;
+  grid-template-columns: 70px 1fr 5px;
   grid-template-rows: repeat(3, 23px);
 }
 
