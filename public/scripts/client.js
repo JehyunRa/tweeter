@@ -6,6 +6,7 @@
 
 $(document).ready(function() {
 
+  // calculate date for given data
   function pad2(number) {
     return (number < 10 ? '0' : '') + number
   }
@@ -51,6 +52,7 @@ $(document).ready(function() {
     return `${year}/${month}/${Math.floor(days) + 1} ${pad2(hour)}:${pad2(minute)}`;
   }
 
+  // create tweet container for each tweet
   function createTweetElements(tweet) {
     const markup = `
         <article class="center">
@@ -74,6 +76,7 @@ $(document).ready(function() {
     return markup;
   };
   
+  // GET the database tweets and call createTweetElements on each of them and append result
   function renderTweets() {
     $.ajax('/tweets', { method: 'GET' })
     .then(function (tweets) {
@@ -84,6 +87,7 @@ $(document).ready(function() {
     })
   };
 
+  // POST the new-tweet to the server and call GET function
   function postTweet(form) {
     let data = $(form).serialize();
     document.getElementById("tweetTextArea").value = ""
@@ -97,20 +101,24 @@ $(document).ready(function() {
     })
   };
 
+  // remove harmful inputs
   const escape =  function(str) {
     let div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   }
 
+  // when new-tweet form is submitted intercept it
   $("#tweetTextForm").on('submit', function(e) {
     e.preventDefault();
-    $('#tweetTextArea').css("height", 31 + "px");
+    $('#tweetTextArea').css("height", 31 + "px"); // reset textbox size
     let text = document.getElementById("tweetTextArea").value;
+    
+    // check content validation
     if (text === "" || text.length >= 140) {
       $('.warning').addClass('warningShow');
     } else {
-      $('.warning').removeClass('warningShow');
+      $('.warning').removeClass('warningShow'); 
       document.getElementById("tweetTextArea").value = `<p>${escape(text)}</p>`;
       postTweet(this);
     }
