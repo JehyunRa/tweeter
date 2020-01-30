@@ -28,7 +28,7 @@ $(document).ready(function() {
           <hr2/>
           <div class="flexParent flexSB">
             <p>${numberToDate(tweet.created_at)}</p>
-            <p>💟🔁😀</p>
+            <p>🏳️🔃💟</p>
           </div>
         </article>
       `;
@@ -39,6 +39,7 @@ $(document).ready(function() {
   function renderTweets() {
     $.ajax('/tweets', { method: 'GET' })
     .then(function (tweets) {
+      $("#display-tweets").empty();
       for (const tweet of tweets) {
         let markup = createTweetElements(tweet);
         $("#display-tweets").append(markup);
@@ -46,42 +47,38 @@ $(document).ready(function() {
     })
   };
 
+  // remove harmful inputs
+  const escape =  function(str) {
+    return `%3Cdiv%3E${str}%3Cdiv%3E`;
+  }
+
   // POST the new-tweet to the server and call GET function
   function postTweet(form) {
-    let data = $(form).serialize();
+    // reset textbox size
+    $('#counter').text(140);
+    $('#tweetTextArea').css("height", 31 + "px");
+
+    let data = `text=${escape($(form).serialize().slice(5))}`;
     document.getElementById("tweetTextArea").value = ""
     $.ajax({
       url: '/tweets',
       data,
       method: "POST"
     }).then(() => {
-      $("#display-tweets").empty();
       renderTweets();
     })
   };
 
-  // remove harmful inputs
-  const escape =  function(str) {
-    let div = document.createElement('div');
-    div.appendChild(document.createTextNode(str));
-    return div.innerHTML;
-  }
-
   // when new-tweet form is submitted intercept it
   $("#tweetTextForm").on('submit', function(e) {
     e.preventDefault();
-
-    // reset textbox size
-    $('#counter').text(140);
-    $('#tweetTextArea').css("height", 31 + "px");
     
     // check content validation
     let text = document.getElementById("tweetTextArea").value;
-    if (text === "" || text.length >= 140) {
+    if (text === "" || text.length > 140) {
       $('.warning').addClass('warningShow');
     } else {
       $('.warning').removeClass('warningShow'); 
-      document.getElementById("tweetTextArea").value = `<p>${escape(text)}</p>`;
       postTweet(this);
     }
   });
