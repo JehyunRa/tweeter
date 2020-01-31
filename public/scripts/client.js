@@ -12,7 +12,7 @@ $(document).ready(function() {
   // }
 
   // create tweet container for each tweet
-  //(for unknown reason moment.js is calculating time 10 min ago as default so I've added 600000 milliseconds)
+  //(for unknown reason moment.js sometime calculate time 10 min ago instead of now)
   function createTweetElements(tweet) {
     const markup = `
         <article class="center">
@@ -28,7 +28,7 @@ $(document).ready(function() {
           </div>
           <hr2/>
           <div class="flexParent flexSB">
-            <p>${moment(tweet.created_at + 600000).fromNow()}</p>
+            <p>${moment(tweet.created_at).fromNow()}</p>
             <p>🏳️🔃💟</p>
           </div>
         </article>
@@ -49,10 +49,13 @@ $(document).ready(function() {
   };
 
   // remove harmful inputs
-  const escape =  function(str) {	
-    let div = document.createElement('div');	
-    div.appendChild(document.createTextNode(str));	
-    return div.innerHTML;	
+  const escape =  function(form) {	
+    const div = document.createElement('div');	
+    div.appendChild(document.createTextNode(document.getElementById("tweetTextArea").value));
+    document.getElementById("tweetTextArea").value = `<p>${div.innerHTML}<p>`;
+    const data = $(form).serialize();
+    document.getElementById("tweetTextArea").value = ""
+    return data;
   }
 
   // POST the new-tweet to the server and call GET function
@@ -61,9 +64,7 @@ $(document).ready(function() {
     $('#counter').text(140);
     $('#tweetTextArea').css("height", 31 + "px");
 
-    document.getElementById("tweetTextArea").value = `<p>${escape(document.getElementById("tweetTextArea").value)}</p>`;
-    let data = $(form).serialize();
-    document.getElementById("tweetTextArea").value = ""
+    const data = escape(form);
     $.ajax({
       url: '/tweets',
       data,
