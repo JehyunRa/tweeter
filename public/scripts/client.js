@@ -49,8 +49,10 @@ $(document).ready(function() {
   };
 
   // remove harmful inputs
-  const escape =  function(str) {
-    return `%3Cdiv%3E${str}%3Cdiv%3E`;
+  const escape =  function(str) {	
+    let div = document.createElement('div');	
+    div.appendChild(document.createTextNode(str));	
+    return div.innerHTML;	
   }
 
   // POST the new-tweet to the server and call GET function
@@ -59,7 +61,8 @@ $(document).ready(function() {
     $('#counter').text(140);
     $('#tweetTextArea').css("height", 31 + "px");
 
-    let data = `text=${escape($(form).serialize().slice(5))}`;
+    document.getElementById("tweetTextArea").value = `<p>${escape(document.getElementById("tweetTextArea").value)}</p>`;
+    let data = $(form).serialize();
     document.getElementById("tweetTextArea").value = ""
     $.ajax({
       url: '/tweets',
